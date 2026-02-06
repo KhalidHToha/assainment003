@@ -99,3 +99,25 @@ function gonoVote(array) {
 }
 
 /** PROBLEM 5 START */
+
+function analyzeText(str) {
+    if(typeof(str) === "string"){
+        let picesOfWord = str.split(" ");
+        let longWord = "" ;
+        for(item of picesOfWord){
+            if(item.length > longWord.length){
+                longWord = item ;
+            }
+        }
+
+        let fullSentence = picesOfWord.join("").length;
+        let finalOutPut = {
+            longwords : longWord, 
+            token : fullSentence
+        }
+        return finalOutPut ;
+    }
+    else{
+        return "Invalid" ;
+    }
+}

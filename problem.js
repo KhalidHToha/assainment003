@@ -61,3 +61,41 @@ function finalScore(omr) {
         return "Invalid"
     }
 }
+
+
+
+/** PROBLEM 4 START */
+
+function gonoVote(array) {
+    if(Array.isArray(array)){
+        let haVote = [];
+        let naVote = [];
+        for(vote of array){
+            if(vote === "ha"){
+                haVote.push(vote);
+            }
+            else if(vote === "na"){
+
+                naVote.push(vote);
+            }
+
+        }
+        let haVoteCount = haVote.length ;
+        let naVoteCount = naVote.length ;
+        if(haVoteCount > naVoteCount){
+            return true ;
+        }
+        else if(haVoteCount === naVoteCount){
+            return "equal" ;
+        }
+        else{
+            return false ;
+        }
+
+    }
+    else{
+        return "Invalid"
+    }
+}
+
+/** PROBLEM 5 START */

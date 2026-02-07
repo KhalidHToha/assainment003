@@ -70,7 +70,7 @@ function gonoVote(array) {
     if(Array.isArray(array)){
         let haVote = [];
         let naVote = [];
-        for(vote of array){
+        for(let vote of array){
             if(vote === "ha"){
                 haVote.push(vote);
             }
@@ -98,24 +98,31 @@ function gonoVote(array) {
     }
 }
 
+
 /** PROBLEM 5 START */
 
 function analyzeText(str) {
     if(typeof(str) === "string"){
         let picesOfWord = str.split(" ");
         let longWord = "" ;
-        for(item of picesOfWord){
+        for(let item of picesOfWord){
             if(item.length > longWord.length){
                 longWord = item ;
             }
         }
 
         let fullSentence = picesOfWord.join("").length;
+        
         let finalOutPut = {
             longwords : longWord, 
             token : fullSentence
         }
-        return finalOutPut ;
+        if(fullSentence !== 0){
+            return finalOutPut ;
+        }
+        else{
+            return "Invalid"
+        }
     }
     else{
         return "Invalid" ;
